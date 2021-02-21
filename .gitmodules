@@ -1,3 +1,9 @@
 [submodule "checkout"]
 	path = checkout
 	url = git@github.com:SergeyPoluektov/mf-checkout.git
+[submodule "inspire"]
+	path = inspire
+	url = git@github.com:SergeyPoluektov/mf-inspire.git
+[submodule "product"]
+	path = product
+	url = git@github.com:SergeyPoluektov/mf-product.git
