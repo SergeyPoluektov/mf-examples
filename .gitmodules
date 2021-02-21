@@ -7,3 +7,6 @@
 [submodule "product"]
 	path = product
 	url = git@github.com:SergeyPoluektov/mf-product.git
+[submodule "app-frame"]
+	path = app-frame
+	url = git@github.com:SergeyPoluektov/mf-app-frame.git

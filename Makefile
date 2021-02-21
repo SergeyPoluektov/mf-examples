@@ -23,7 +23,7 @@ clean:
 tmp/.packed-inspire.sentinel: $(shell find inspire -type f)
 > mkdir -p $(@D)
 > cd inspire
-> npm ci
+> npm i
 > npm run build
 > cd ..
 > touch $@
@@ -32,7 +32,7 @@ tmp/.packed-inspire.sentinel: $(shell find inspire -type f)
 tmp/.packed-checkout.sentinel: $(shell find checkout -type f)
 > mkdir -p $(@D)
 > cd checkout
-> npm ci
+> npm i
 > npm run build
 > cd ..
 > touch $@
@@ -41,7 +41,7 @@ tmp/.packed-checkout.sentinel: $(shell find checkout -type f)
 tmp/.packed-product.sentinel: $(shell find product -type f)
 > mkdir -p $(@D)
 > cd product
-> npm ci
+> npm i
 > npm run build
 > cd ..
 > touch $@

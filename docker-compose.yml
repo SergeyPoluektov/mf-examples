@@ -1,5 +1,12 @@
 version: "3.3"
 services:
+  app-frame:
+    image: nginx:latest
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./app-frame/dist/:/var/www/localhost/public/
+    ports:
+      - "8080:80"
   inspire:
     image: nginx:latest
     volumes:
