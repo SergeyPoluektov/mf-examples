@@ -11,13 +11,22 @@ endif
 .RECIPEPREFIX = >
 
 # Default - top level rule is what gets ran when you run just `make`
-build: tmp/.packed-inspire.sentinel tmp/.packed-checkout.sentinel tmp/.packed-product.sentinel
+build: tmp/.packed-appframe.sentinel tmp/.packed-inspire.sentinel tmp/.packed-checkout.sentinel tmp/.packed-product.sentinel
 .PHONY: build
 
 # Clean up the output directories; since all the sentinel files go under tmp, this will cause everything to get rebuilt
 clean:
 > rm -rf tmp
 .PHONY: clean
+
+# Build app-frame - re-built if any file under src has been changed since tmp/.packed-appframe.sentinel was last touched
+tmp/.packed-appframe.sentinel: $(shell find app-frame -type f)
+> mkdir -p $(@D)
+> cd app-frame
+> npm i
+> npm run build
+> cd ..
+> touch $@
 
 # Build inspire - re-built if any file under src has been changed since tmp/.packed-inspire.sentinel was last touched
 tmp/.packed-inspire.sentinel: $(shell find inspire -type f)
