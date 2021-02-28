@@ -1,7 +1,7 @@
 # Microfrontends example powered by [Webpack Module Federation](https://webpack.js.org/concepts/module-federation/)
 Implementation of a microfrontend application taken from [micro-frontend.org](https://micro-frontends.org/).
 Application consists of AppFrame, Product App, Checkout App and Inspire App.
-- [AppFrame](https://github.com/SergeyPoluektov/mf-app-frame) (Svelte + Navaid) consists of a sidebar with navigation menu. The AppFrame consumes Product App and Checkout App and render one of these apps accordingly to an URL.
+- [AppFrame](https://github.com/SergeyPoluektov/mf-app-frame) (Svelte + Navaid) consists of a sidebar with navigation menu. The AppFrame consumes applications configuration from `app-registry.json` and renders side bar menu and current page.
 - [Inspire App](https://github.com/SergeyPoluektov/mf-inspire) (Vue) exposes a list of related products. The Inspire App listens to `product:selected` custom event and change the list of related products accordingly.
 - [Checkout App](https://github.com/SergeyPoluektov/mf-checkout) (React + Redux + React-Router) exposes a checkout page, buy button and basket link. The checkout page renders items added to basket as a list with total price. The Buy button listens to `product:selected` custom event and shows price of the selected item. The Basket link renders a link to the checkout page and shows amount of items added to basket.
 - [Product App](https://github.com/SergeyPoluektov/mf-product) (Svelte + Navaid) renders a list of available products and info about selected product. The Product App consumes a Buy Button and Basket link from the Checkout App, and list of related products from Inspire App. The Product App render consumed components accordingly to its own layout.

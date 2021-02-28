@@ -1,0 +1,40 @@
+[
+  {
+    "name": "product",
+    "entry": "http://localhost:8083/remoteEntry.js",
+    "page": {
+      "module": "./bootstrapProductPage",
+      "routes": [
+        {
+          "path": "/",
+          "redirect": "/products"
+        },
+        {
+          "path": "/products"
+        }
+      ],
+      "customElementName": "prd-page"
+    },
+    "navMenu": {
+      "module": "./bootstrapProductNavMenuItem",
+      "customElementName": "prd-nav-menu-item"
+    }
+  },
+  {
+    "name": "checkout",
+    "entry": "http://localhost:8082/remoteEntry.js",
+    "page": {
+      "module": "./bootstrapCheckoutPage",
+      "routes": [
+        {
+          "path": "/checkout"
+        }
+      ],
+      "customElementName": "chk-page"
+    },
+    "navMenu": {
+      "module": "./bootstrapNavMenuItem",
+      "customElementName": "chk-nav-menu-item"
+    }
+  }
+]

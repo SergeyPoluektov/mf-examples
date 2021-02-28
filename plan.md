@@ -12,3 +12,13 @@ EXTRA:
 - app-frame doesn't have hardcoded menu items, but downloads config
   from central place (microfrontend app registry). each microfrontend
   app pushes its config to the app registry on build
+
+App Registry:
+App Config: {
+  name: string
+  exposes: Record<ModuleName, PathToModule>
+  route: RouteString
+  menuItem: {
+    module: ModuleName
+  }
+}
